@@ -6,7 +6,7 @@ before_install:
   - sudo apt-get install nasm clang
 #basic build
 script:
-  - cmake .
   # run clang static analysis while building
   # see http://clang-analyzer.llvm.org/
+  - scan-build cmake .
   - scan-build make
