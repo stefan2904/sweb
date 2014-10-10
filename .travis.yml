@@ -7,4 +7,6 @@ before_install:
 #basic build
 script:
   - cmake .
-  - make
+  # run clang static analysis while building
+  # see http://clang-analyzer.llvm.org/
+  - scan-build make
